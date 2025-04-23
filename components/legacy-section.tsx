@@ -74,30 +74,32 @@ export default function LegacySection() {
       {/* Video Modal */}
       {isVideoOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#001B3D]/80 backdrop-blur-sm p-4"
           onClick={handleClose}
         >
           <div 
-            className="relative w-[90%] max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
+            className="relative w-[90%] max-w-3xl rounded-xl overflow-hidden shadow-2xl transform transition-all"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
-              className="absolute top-4 right-4 z-[60] p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors cursor-pointer"
+              className="absolute top-3 right-3 z-[60] p-2 bg-white/20 rounded-full text-white hover:bg-white/30 transition-all duration-200 backdrop-blur-sm"
               onClick={handleClose}
               aria-label="Close video"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <video
-              ref={videoRef}
-              className="w-full h-full"
-              controls
-              autoPlay
-              src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
-            />
+            <div className="aspect-video bg-gradient-to-b from-[#001B3D] to-black">
+              <video
+                ref={videoRef}
+                className="w-full h-full object-contain"
+                controls
+                autoPlay
+                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
+              />
+            </div>
           </div>
         </div>
       )}
