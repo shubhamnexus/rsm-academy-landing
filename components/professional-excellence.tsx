@@ -8,8 +8,8 @@ interface BenefitPointProps {
 
 function BenefitPoint({ icon, title, description }: BenefitPointProps) {
   return (
-    <div className="flex gap-4 mb-6">
-      <div className="flex-shrink-0 w-10 h-10 text-[#009BDE] self-center">
+    <div className="flex gap-4 mb-6 group">
+      <div className="flex-shrink-0 w-10 h-10 text-[#009BDE] self-center transition-all duration-300 ease-in-out transform group-hover:scale-110 group-hover:rotate-6">
         {icon}
       </div>
       <div>
@@ -102,12 +102,28 @@ export default function ProfessionalExcellence() {
 
           {/* Image Container - 7 columns (about 60%) */}
           <div className="lg:col-span-7">
-            <div className="aspect-[754/421] rounded-lg overflow-hidden">
-              <img 
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003206.png"
-                alt="Professional Excellence"
-                className="w-full h-full object-cover"
-              />
+            <div className="grid grid-cols-3 gap-4">
+              <div className="rounded-lg overflow-hidden group cursor-pointer">
+                <img 
+                  src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Mask%20group.png"
+                  alt="Professional Excellence 1"
+                  className="w-full h-auto object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden group cursor-pointer">
+                <img 
+                  src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Mask%20group%20(1).png"
+                  alt="Professional Excellence 2"
+                  className="w-full h-auto object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden group cursor-pointer">
+                <img 
+                  src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Mask%20group%20(2).png"
+                  alt="Professional Excellence 3"
+                  className="w-full h-auto object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </div>

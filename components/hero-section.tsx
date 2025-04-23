@@ -1,11 +1,12 @@
 "use client"
 
 import Image from "next/image"
+import CertificationsSection from './certifications-section'
 
 export default function HeroSection() {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-16 md:py-20 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Left side - Text content (60%) */}
@@ -26,30 +27,25 @@ export default function HeroSection() {
               </button>
             </div>
 
-            {/* Right side - Image (40%) */}
+            {/* Right side - Video (40%) */}
             <div className="w-full md:w-2/5">
-              <div className="relative w-full h-[400px] md:h-[500px]">
-                <img
-                  src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003218%20(1).png"
-                  alt="Corporate Training Illustration"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <video
+                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/academy-header-aniamtion%20(1).webm"
+                autoPlay
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Full width image section */}
-      <section className="w-full">
-        <div className="w-full relative">
-          <img
-            src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/div.framer-we4gs1.png"
-            alt="Full width section image"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-      </section>
+      {/* Certifications Section */}
+      <CertificationsSection />
     </>
   )
 } 

@@ -1,6 +1,31 @@
 "use client"
 
 import TrainingCard from './core-training-card'
+import { motion } from "framer-motion"
+
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      when: "beforeChildren",
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const titleVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
 
 export default function CoreTrainingAreas() {
   const trainingAreas = [
@@ -52,11 +77,20 @@ export default function CoreTrainingAreas() {
   ]
 
   return (
-    <section className="pt-16 pb-24 bg-gray-50">
+    <motion.section 
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="pt-16 pb-24 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <motion.h2 
+          variants={titleVariants}
+          className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#009BDE] to-[#0081b8]"
+        >
           Our Core Training Areas for Businesses
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {trainingAreas.map((area, index) => (
             <div key={index} className={index === 8 ? "lg:self-center" : ""}>
@@ -65,11 +99,12 @@ export default function CoreTrainingAreas() {
                 description={area.description}
                 imageSrc={area.imageSrc}
                 isExploreCard={area.isExploreCard}
+                index={index}
               />
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 } 

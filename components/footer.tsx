@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 type FooterLink = {
   text: string;
   href: string;
@@ -11,6 +13,49 @@ type FooterSection = {
   title: string;
   links: FooterLink[];
   logo?: string;
+}
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      when: "beforeChildren",
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4
+    }
+  }
+}
+
+const logoVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
 }
 
 export default function Footer() {
@@ -48,16 +93,38 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#1B1B1B] text-white py-16">
+    <motion.footer 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      className="bg-[#1B1B1B] text-white py-16"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {footerSections.map((section, index) => (
-            <div key={index} className="space-y-4">
-              <h3 className="text-lg font-medium mb-6">{section.title}</h3>
+            <motion.div 
+              key={index} 
+              variants={sectionVariants}
+              className="space-y-4"
+            >
+              <motion.h3 
+                variants={itemVariants}
+                className="text-lg font-medium mb-6"
+              >
+                {section.title}
+              </motion.h3>
               {section.links.length > 0 ? (
-                <ul className="space-y-3">
+                <motion.ul 
+                  variants={sectionVariants}
+                  className="space-y-3"
+                >
                   {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
+                    <motion.li 
+                      key={linkIndex}
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
                       <a 
                         href={link.href} 
                         className="text-gray-400 hover:text-white transition-colors text-sm"
@@ -66,22 +133,26 @@ export default function Footer() {
                       >
                         {link.text}
                       </a>
-                    </li>
+                    </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
               ) : section.logo && (
-                <div className="mt-4">
+                <motion.div 
+                  variants={logoVariants}
+                  whileHover="hover"
+                  className="mt-4"
+                >
                   <img 
                     src={section.logo} 
                     alt="National eLearning Center Logo" 
                     className="w-56"
                   />
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 } 

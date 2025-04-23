@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 interface ApproachStepProps {
   icon: React.ReactNode
   title: string
@@ -10,16 +12,47 @@ interface ApproachStepProps {
 
 function ApproachStep({ icon, title, description, isLast = false, index }: ApproachStepProps) {
   return (
-    <div className="flex flex-col items-center text-center relative">
-      <div className="w-16 h-16 mb-3 rounded-full overflow-hidden">
+    <motion.div 
+      className="flex flex-col items-center text-center relative"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+    >
+      <motion.div 
+        className="w-16 h-16 mb-3 rounded-full overflow-hidden"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
         {icon}
-      </div>
-      <h3 className="font-semibold mb-1.5">{title}</h3>
-      <p className="text-gray-600 text-sm max-w-[200px]">{description}</p>
+      </motion.div>
+      <motion.h3 
+        className="font-semibold mb-1.5"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.2 + 0.3 }}
+      >
+        {title}
+      </motion.h3>
+      <motion.p 
+        className="text-gray-600 text-sm max-w-[200px]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.2 + 0.4 }}
+      >
+        {description}
+      </motion.p>
       
       {/* Connecting curved dotted line with arrow - alternating up and down */}
       {!isLast && (
-        <>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.2 + 0.5 }}
+        >
           {index === 1 ? (
             <div className="hidden md:block absolute -top-4 -right-16 w-32 h-16">
               <img 
@@ -77,9 +110,9 @@ function ApproachStep({ icon, title, description, isLast = false, index }: Appro
               )}
             </div>
           )}
-        </>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   )
 }
 
@@ -142,14 +175,20 @@ export default function ProvenApproach() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl font-bold mb-3">
             Our Proven Approach to Business Training
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             At RSM Saudi Arabia Professional Academy, our training methodology ensures lasting organizational results:
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
           {steps.map((step, index) => (

@@ -37,9 +37,9 @@ export default function LegacySection() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/3] w-[95%] bg-navy-900 rounded-lg overflow-hidden">
               <img 
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/BG%20(2).png"
+                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/img-1.png"
                 alt="Video thumbnail"
-                className="absolute inset-0 w-[101%] h-[101%] -left-[0.5%] -top-[0.5%] object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-[#001B3D]/50">
                 <button 
@@ -74,32 +74,30 @@ export default function LegacySection() {
       {/* Video Modal */}
       {isVideoOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#001B3D]/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
           onClick={handleClose}
         >
           <div 
-            className="relative w-[90%] max-w-3xl rounded-xl overflow-hidden shadow-2xl transform transition-all"
+            className="relative w-[90%] max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
-              className="absolute top-3 right-3 z-[60] p-2 bg-white/20 rounded-full text-white hover:bg-white/30 transition-all duration-200 backdrop-blur-sm"
+              className="absolute top-4 right-4 z-[60] p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors cursor-pointer"
               onClick={handleClose}
               aria-label="Close video"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="aspect-video bg-gradient-to-b from-[#001B3D] to-black">
-              <video
-                ref={videoRef}
-                className="w-full h-full object-contain"
-                controls
-                autoPlay
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
-              />
-            </div>
+            <video
+              ref={videoRef}
+              className="w-full h-full"
+              controls
+              autoPlay
+              src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
+            />
           </div>
         </div>
       )}
