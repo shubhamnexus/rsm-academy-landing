@@ -74,11 +74,11 @@ export default function LegacySection() {
       {/* Video Modal */}
       {isVideoOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
           onClick={handleClose}
         >
           <div 
-            className="relative w-full h-full flex items-center justify-center"
+            className="relative w-[90%] max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -91,15 +91,13 @@ export default function LegacySection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="w-full h-full flex items-center justify-center">
-              <video
-                ref={videoRef}
-                className="max-h-screen max-w-full w-auto h-auto"
-                controls
-                autoPlay
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
-              />
-            </div>
+            <video
+              ref={videoRef}
+              className="w-full h-full"
+              controls
+              autoPlay
+              src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/RSM%20Academy%20AI%20Reel.mp4"
+            />
           </div>
         </div>
       )}
