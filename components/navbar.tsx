@@ -174,7 +174,12 @@ export default function Navbar() {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="/" className="text-gray-700 hover:text-gray-900">
+              <Link 
+                href="https://rsm-academy-landing.vercel.app/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-gray-900"
+              >
                 Corporate Training
               </Link>
             </motion.div>

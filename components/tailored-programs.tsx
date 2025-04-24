@@ -19,7 +19,7 @@ export default function TailoredPrograms() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12 text-center leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12 text-center leading-[1.6] py-1 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
           >
             Bridging Skill Gaps with Globally Accredited, <br />Saudi-Tailored Programs
           </motion.h2>

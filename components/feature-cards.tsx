@@ -23,9 +23,29 @@ function FeatureCard({ title, description, icon, index }: FeatureCardProps) {
       }}
       className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-start text-left border border-gray-100 hover:border-[#009BDE]/20 hover:bg-gradient-to-br hover:from-white hover:to-[#009BDE]/5"
     >
-      <div className="mb-4 text-[#009BDE] transform hover:scale-110 transition-transform duration-300">
+      <motion.div 
+        className="mb-4 text-[#009BDE]"
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+          delay: index * 0.1 
+        }}
+        whileHover={{ 
+          scale: 1.1,
+          rotate: [0, -10, 10, -10, 0],
+          transition: {
+            rotate: {
+              duration: 0.5,
+              ease: "easeInOut"
+            }
+          }
+        }}
+      >
         {icon}
-      </div>
+      </motion.div>
       <h3 className="text-xl font-bold mb-3 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">{title}</h3>
       <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
     </motion.div>
@@ -62,24 +82,24 @@ export default function FeatureCards() {
           index={index}
           icon={
             index === 0 ? 
-              <img 
+              <motion.img 
                 src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003200%20(1).png"
                 alt="Global Expertise Icon"
                 className="w-12 h-12 object-contain"
               /> :
             index === 1 ?
-              <img 
+              <motion.img 
                 src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003201.png"
                 alt="Tailored Solutions Icon"
                 className="w-12 h-12 object-contain"
               /> :
             index === 2 ?
-              <img 
+              <motion.img 
                 src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003185.png"
                 alt="Recognized Excellence Icon"
                 className="w-12 h-12 object-contain"
               /> :
-              <img 
+              <motion.img 
                 src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Group%201000003204%20(1).png"
                 alt="Expert-Led Training Icon"
                 className="w-12 h-12 object-contain"

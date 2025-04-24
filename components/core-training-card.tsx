@@ -81,7 +81,7 @@ export default function TrainingCard({ title, description, imageSrc, isExploreCa
           custom={index * 0.15 + 0.4}
           whileHover={{ scale: 1.05, backgroundColor: "#0081b8" }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => window.open('https://v0-rsm-five.vercel.app/', '_blank')}
+          onClick={() => window.open('https://rsmacademy.vercel.app/', '_blank')}
           className="bg-[#009BDE] text-white px-6 py-2 rounded-md transition-colors"
         >
           Schedule a Consultation

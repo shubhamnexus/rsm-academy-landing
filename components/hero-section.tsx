@@ -21,7 +21,7 @@ export default function HeroSection() {
               </p>
               <button 
                 className="bg-[#009BDE] hover:bg-[#0088C4] text-white font-semibold py-3 px-8 rounded-lg transition-colors"
-                onClick={() => window.open('https://v0-rsm-five.vercel.app/', '_blank')}
+                onClick={() => window.open('https://rsmacademy.vercel.app/', '_blank')}
               >
                 Request Your Free Assessment
               </button>

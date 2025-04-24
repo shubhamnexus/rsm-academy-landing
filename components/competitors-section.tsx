@@ -55,7 +55,7 @@ export default function CompetitorsSection() {
           </p>
         </motion.div>
         <motion.button 
-          onClick={() => window.open('https://v0-rsm-five.vercel.app/', '_blank')}
+          onClick={() => window.open('https://rsmacademy.vercel.app/', '_blank')}
           className="bg-[#00A6E6] text-white px-12 py-4 rounded-md text-xl font-semibold hover:bg-[#0095D1] transition-colors min-w-[300px]"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
