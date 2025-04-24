@@ -37,7 +37,7 @@ export default function LegacySection() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/3] w-[95%] bg-navy-900 rounded-lg overflow-hidden">
               <img 
-                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/171.png"
+                src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/1717.png"
                 alt="Video thumbnail"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />

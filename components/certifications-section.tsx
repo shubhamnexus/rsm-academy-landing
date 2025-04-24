@@ -35,64 +35,68 @@ export default function CertificationsSection() {
           <motion.div 
             className="absolute flex space-x-24 items-center"
             animate={{
-              x: ["100%", "-100%"],
+              x: ["0%", "-50%"],
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 15,
+                duration: 20,
                 ease: "linear",
               },
             }}
           >
-            {[
-              {
-                src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Clip%20path%20group.png",
-                alt: "Certification Logo 1",
-                isSpecial: false
-              },
-              {
-                src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Clip%20path%20group%20(1).png",
-                alt: "Certification Logo 2",
-                isSpecial: false
-              },
-              {
-                src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/IMG-20250423-WA0004.jpg",
-                alt: "Certification Logo 3",
-                isSpecial: true
-              },
-              {
-                src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Ec_Council_Logo.png",
-                alt: "Certification Logo 4",
-                isSpecial: true
-              }
-            ].map((logo, index) => (
-              <motion.div
-                key={index}
-                className="relative flex items-center justify-center"
-                style={{
-                  width: logo.isSpecial ? '300px' : '250px',
-                  height: '150px'
-                }}
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.isSpecial ? 280 : 230}
-                  height={140}
-                  className={`object-contain w-full h-full ${
-                    logo.isSpecial ? 'brightness-110 contrast-110 scale-110' : ''
-                  } transition-all duration-300 group-hover:brightness-125 group-hover:contrast-125`}
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%', 
-                    objectFit: 'contain',
-                    padding: logo.isSpecial ? '0.5rem' : '0',
-                    transform: logo.isSpecial ? 'scale(1.1)' : 'none'
-                  }}
-                />
-              </motion.div>
+            {[...Array(2)].map((_, setIndex) => (
+              <div key={setIndex} className="flex space-x-24 items-center">
+                {[
+                  {
+                    src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Clip%20path%20group.png",
+                    alt: "Certification Logo 1",
+                    isSpecial: false
+                  },
+                  {
+                    src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Clip%20path%20group%20(1).png",
+                    alt: "Certification Logo 2",
+                    isSpecial: false
+                  },
+                  {
+                    src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/IMG-20250423-WA0004.jpg",
+                    alt: "Certification Logo 3",
+                    isSpecial: true
+                  },
+                  {
+                    src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Ec_Council_Logo.png",
+                    alt: "Certification Logo 4",
+                    isSpecial: true
+                  }
+                ].map((logo, index) => (
+                  <motion.div
+                    key={`${setIndex}-${index}`}
+                    className="relative flex items-center justify-center"
+                    style={{
+                      width: logo.isSpecial ? '300px' : '250px',
+                      height: '150px'
+                    }}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.isSpecial ? 280 : 230}
+                      height={140}
+                      className={`object-contain w-full h-full ${
+                        logo.isSpecial ? 'brightness-110 contrast-110 scale-110' : ''
+                      } transition-all duration-300 group-hover:brightness-125 group-hover:contrast-125`}
+                      style={{ 
+                        maxWidth: '100%', 
+                        maxHeight: '100%', 
+                        objectFit: 'contain',
+                        padding: logo.isSpecial ? '0.5rem' : '0',
+                        transform: logo.isSpecial ? 'scale(1.1)' : 'none'
+                      }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             ))}
           </motion.div>
         </div>
