@@ -41,7 +41,7 @@ export default function LegacySection() {
                 alt="Video thumbnail"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-[#001B3D]/50">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <button 
                   className="w-16 h-16 rounded-full bg-[#009BDE] flex items-center justify-center hover:bg-[#0081b8] transition-colors"
                   aria-label="Play video"

@@ -8,6 +8,7 @@ interface TrainingCardProps {
   imageSrc?: string
   isExploreCard?: boolean
   index?: number
+  isNinthCard?: boolean
 }
 
 const cardVariants = {
@@ -29,7 +30,6 @@ const cardVariants = {
   hover: {
     y: -8,
     scale: 1.02,
-    boxShadow: "0 20px 25px -5px rgba(0, 155, 222, 0.1), 0 10px 10px -5px rgba(0, 155, 222, 0.04)",
     transition: {
       duration: 0.3,
       ease: "easeOut"
@@ -50,7 +50,7 @@ const contentVariants = {
   })
 }
 
-export default function TrainingCard({ title, description, imageSrc, isExploreCard = false, index = 0 }: TrainingCardProps) {
+export default function TrainingCard({ title, description, imageSrc, isExploreCard = false, index = 0, isNinthCard = false }: TrainingCardProps) {
   if (isExploreCard) {
     return (
       <motion.div 
@@ -60,7 +60,7 @@ export default function TrainingCard({ title, description, imageSrc, isExploreCa
         viewport={{ once: true }}
         whileHover="hover"
         custom={index}
-        className="bg-gradient-to-br from-white to-[#009BDE]/5 p-8 rounded-xl shadow-sm flex flex-col items-center text-center h-[240px] justify-center border border-[#009BDE]/10 hover:border-[#009BDE]/30 transition-all duration-300"
+        className="bg-transparent p-8 flex flex-col items-center text-center h-[240px] justify-center"
       >
         <motion.h3 
           variants={contentVariants}
@@ -98,7 +98,7 @@ export default function TrainingCard({ title, description, imageSrc, isExploreCa
       viewport={{ once: true }}
       whileHover="hover"
       custom={index}
-      className="bg-gradient-to-br from-white to-[#009BDE]/5 rounded-xl shadow-sm overflow-hidden border border-[#009BDE]/10 hover:border-[#009BDE]/30 transition-all duration-300 h-full"
+      className={`bg-gradient-to-br from-white to-[#009BDE]/5 rounded-xl shadow-sm overflow-hidden ${isNinthCard ? 'border-0' : 'border border-[#009BDE]/10 hover:border-[#009BDE]/30'} transition-all duration-300 h-full`}
     >
       <motion.div 
         variants={contentVariants}

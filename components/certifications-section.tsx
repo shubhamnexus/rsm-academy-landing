@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 export default function CertificationsSection() {
   return (
-    <section className="w-full bg-[#00153D] py-20 relative overflow-hidden">
+    <section className="w-full bg-[#00153D] py-12 relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Text Content */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -31,23 +31,23 @@ export default function CertificationsSection() {
         </motion.div>
 
         {/* Logos Container */}
-        <div className="relative overflow-hidden h-[200px]">
+        <div className="relative overflow-hidden h-[150px]">
           <motion.div 
-            className="absolute flex space-x-24 items-center"
+            className="absolute flex items-center"
             animate={{
-              x: ["0%", "-50%"],
+              x: ["0%", "-25%"],
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 15,
                 ease: "linear",
               },
             }}
           >
-            {[...Array(2)].map((_, setIndex) => (
-              <div key={setIndex} className="flex space-x-24 items-center">
+            {[...Array(4)].map((_, setIndex) => (
+              <div key={setIndex} className="flex items-center">
                 {[
                   {
                     src: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy%20Landing%20Page/Clip%20path%20group.png",
@@ -72,17 +72,17 @@ export default function CertificationsSection() {
                 ].map((logo, index) => (
                   <motion.div
                     key={`${setIndex}-${index}`}
-                    className="relative flex items-center justify-center"
+                    className="relative flex items-center justify-center px-8"
                     style={{
-                      width: logo.isSpecial ? '300px' : '250px',
-                      height: '150px'
+                      width: logo.isSpecial ? '240px' : '220px',
+                      height: '140px'
                     }}
                   >
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={logo.isSpecial ? 280 : 230}
-                      height={140}
+                      width={logo.isSpecial ? 220 : 200}
+                      height={120}
                       className={`object-contain w-full h-full ${
                         logo.isSpecial ? 'brightness-110 contrast-110 scale-110' : ''
                       } transition-all duration-300 group-hover:brightness-125 group-hover:contrast-125`}
@@ -104,16 +104,16 @@ export default function CertificationsSection() {
 
       {/* Background decorative elements */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full opacity-20"
+        className="absolute top-0 left-0 w-full h-full opacity-10"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
+        animate={{ opacity: 0.1 }}
         transition={{ duration: 1.5 }}
       >
         <motion.div 
-          className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full blur-3xl"
+          className="absolute top-0 left-0 w-48 h-48 bg-blue-400 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             duration: 8,
@@ -122,10 +122,10 @@ export default function CertificationsSection() {
           }}
         />
         <motion.div 
-          className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl"
+          className="absolute bottom-0 right-0 w-48 h-48 bg-blue-500 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             duration: 8,
