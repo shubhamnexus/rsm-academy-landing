@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'RSM Academy Landing',
+  description: 'RSM Academy Landing Page',
   generator: 'v0.dev',
   icons: {
     icon: [
