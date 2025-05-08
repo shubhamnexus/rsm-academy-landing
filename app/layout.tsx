@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: 'RSM Academy Landing',
@@ -23,7 +24,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" sizes="64x64" />
       </head>
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
