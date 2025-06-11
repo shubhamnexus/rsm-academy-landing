@@ -161,6 +161,26 @@ export default function Navbar() {
       </motion.div>
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Link 
+          href="https://rsmacademy-sa.com/courses/online" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-gray-900"
+        >
+          Live Courses
+        </Link>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <Link 
+          href="https://rsmacademy-sa.com/courses/recorded" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-gray-900"
+        >
+          Recorded Courses
+        </Link>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <Link 
           href="https://rsm-academy-landing.vercel.app/" 
           target="_blank"
           rel="noopener noreferrer"
@@ -189,35 +209,36 @@ export default function Navbar() {
       transition={{ type: "spring", stiffness: 100, damping: 15 }}
       className="border-b border-gray-200 bg-white fixed w-full top-0 z-50"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo area */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0 w-48 md:w-64"
-          >
-            <Link 
-              href="https://rsmacademy-sa.com/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center h-full"
+      <div className="container mx-auto px-0">
+        <div className="flex h-24 items-center justify-between">
+          {/* Left: Logo and Nav */}
+          <div className="flex items-center -ml-4 mr-auto">
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex-shrink-0 w-44 md:w-52 pl-12"
             >
-              <img
-                src="/rsm-saudi-tech-logo.png"
-                alt="RSM Saudi Tech Logo"
-                className="h-12 md:h-16 w-auto object-contain"
-              />
-            </Link>
-          </motion.div>
+              <Link 
+                href="https://rsmacademy-sa.com/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center h-full"
+              >
+                <img
+                  src="https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/RSM%20Academy/new_logo.png"
+                  alt="RSM Saudi Tech Logo"
+                  className="h-18 md:h-20 w-auto object-contain"
+                />
+              </Link>
+            </motion.div>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-12 ml-12">
+              <NavLinks />
+            </nav>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <NavLinks />
-          </nav>
-
-          {/* Right side - Sign in, Cart and Search */}
-          <div className="flex items-center space-x-4">
+          {/* Right: Sign in, Cart and Search */}
+          <div className="flex items-center space-x-8">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="https://rsmacademy-sa.com/login" 
